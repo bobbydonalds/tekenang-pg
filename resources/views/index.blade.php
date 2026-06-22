@@ -71,7 +71,8 @@
 		<!-- END NAV SECTION -->
 
 		<!-- HOME SECTION -->
-		<section id="home" class="hero-wrap js-fullheight" style="background-image: url(images/bg-1.jpg);" data-stellar-background-ratio="0.5">
+		@foreach ($data_background as $background)
+	<section id="home" class="hero-wrap js-fullheight" style="background-image: url({{ asset('storage/' . $background->gambar_bg) }});" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
@@ -84,6 +85,7 @@
         </div>
       </div>
     </section>
+	@endforeach
 		<!-- END HOME SECTION -->
 
 		<!-- ABOUT SECTION -->

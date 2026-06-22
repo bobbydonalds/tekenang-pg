@@ -447,17 +447,23 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-@media (min-width: 406px) {
+@media (min-width: 306px) {
   .logo-tekenang {
     width: 250px;
     height: 250px;
   }
 }
+@media (min-width: 692px) {
+  .logo-tekenang {
+    width: 350px;
+    height: 350px;
+  }
+}
 
 @media (min-width: 992px) {
   .logo-tekenang {
-    width: 450px;
-    height: 450px;
+    width: 500px;
+    height: 500px;
   }
 }
 .container {
@@ -8945,6 +8951,26 @@ strong {
     font-size: 16px;
     font-style: italic;
     color: #fff; }
+
+
+@media (max-width: 375px) {
+  .testimony-wrap .user-img {
+    width: 200px;
+    height: 200px; } 
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+  .testimony-wrap .user-img {
+    width: 100px;
+    height: 100px; 
+  } 
+  .testimony-wrap .position {
+    font-size: 11px;
+    }
+
+  }
+
+  
 
 .form-control {
   height: 52px !important;

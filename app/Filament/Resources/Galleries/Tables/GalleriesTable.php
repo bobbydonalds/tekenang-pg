@@ -16,12 +16,18 @@ class GalleriesTable
         return $table
             ->columns([
                 TextColumn::make('kategori_gambar')
+                    ->label('Kategori')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                     ->width('200px'),
                 TextColumn::make('deskripsi_gambar')
+                    ->label('Deskripsi')
                     ->searchable()
-                    ->sortable(),  
+                    ->sortable()
+                    ->width('200px'),  
                 ImageColumn::make('link_gambar')
+                    ->label('Gambar')
+                    ->imageSize(200)
                     ->visibility('public'),
                 TextColumn::make('created_at')
                     ->dateTime()
