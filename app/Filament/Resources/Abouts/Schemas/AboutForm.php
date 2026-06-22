@@ -17,7 +17,10 @@ class AboutForm
                     ->columnSpanFull(),
                 Textarea::make('deskripsi_tentang')
                     ->required()
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->rows(15),
+                Textarea::make('link_video')
+                    ->columnSpanFull(),    
                  FileUpload::make('gambar_1')
                     ->image()
                     ->columnSpanFull()

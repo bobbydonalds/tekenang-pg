@@ -9,6 +9,7 @@ class About extends Model
     protected $fillable = [
         'judul_tentang',
         'deskripsi_tentang',
+        'link_video',
         'gambar_1',
         'gambar_2',
         'gambar_3',

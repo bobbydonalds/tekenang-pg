@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('judul_tentang');
             $table->text('deskripsi_tentang');
+            $table->text('link_video')->nullable();
             $table->text('gambar_1')->nullable();
             $table->text('gambar_2')->nullable();
             $table->text('gambar_3')->nullable();

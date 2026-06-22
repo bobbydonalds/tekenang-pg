@@ -90,12 +90,39 @@
 		<section class="ftco-about img ftco-section" id="about">
     	<div class="container">
     		<div class="row d-flex no-gutters">
-    			<div class="col-md-6 col-lg-6 d-flex">
+			@foreach ($data_about as $about)
+    		@if ($about->link_video === NULL)
+			<div class="col-md-6 col-lg-6 d-flex">
     				<div class="img-about img d-flex align-items-stretch">
     					<div class="overlay"></div>
-	    				<div class="img img-video d-flex align-self-stretch align-items-center" style="background-image:url(images/about-2.jpg);">
+	    				<div class="img img-video d-flex align-self-stretch align-items-center" style="background-image:url({{ asset('storage/' . $about->gambar_1) }});">
+	    					
+	    				</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-6 pl-md-5">
+	          <div class="heading-section ftco-animate">
+	            <h2 class="mb-4">{{ $about->judul_tentang }}</h2>
+	            <p>{{ $about->deskripsi_tentang }}</p>
+
+	            <div class="counter-wrap ftco-animate d-flex my-md-4">
+	              <div class="text">
+	              </div>
+		          </div>
+		          <div class="d-flex w-100">
+		            <div class="img img-about-2 mr-2" style="background-image: url({{ asset('storage/' . $about->gambar_2) }});"></div>
+		            <div class="img img-about-2 ml-2" style="background-image: url({{ asset('storage/' . $about->gambar_3) }});"></div>
+		          </div>
+		          
+	          </div>
+	        </div>
+				@else
+					<div class="col-md-6 col-lg-6 d-flex">
+    				<div class="img-about img d-flex align-items-stretch">
+    					<div class="overlay"></div>
+	    				<div class="img img-video d-flex align-self-stretch align-items-center" style="background-image:url({{ asset('storage/' . $about->gambar_1) }});">
 	    					<div class="video justify-content-center">
-									<a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
+									<a href="{{ $about->link_video }}" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
 										<span class="ion-ios-play"></span>
 			  					</a>
 								</div>
@@ -104,23 +131,22 @@
     			</div>
     			<div class="col-md-6 col-lg-6 pl-md-5">
 	          <div class="heading-section ftco-animate">
-	            <h2 class="mb-4">Snapshot is A Creative Direction, <br>Photography Agency</h2>
-	            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+	            <h2 class="mb-4">{{ $about->judul_tentang }}</h2>
+	            <p>{{ $about->deskripsi_tentang }}</p>
 
 	            <div class="counter-wrap ftco-animate d-flex my-md-4">
 	              <div class="text">
 	              </div>
 		          </div>
 		          <div class="d-flex w-100">
-		            <div class="img img-about-2 mr-2" style="background-image: url(images/about.jpg);"></div>
-		            <div class="img img-about-2 ml-2" style="background-image: url(images/about-3.jpg);"></div>
+		            <div class="img img-about-2 mr-2" style="background-image: url({{ asset('storage/' . $about->gambar_2) }});"></div>
+		            <div class="img img-about-2 ml-2" style="background-image: url({{ asset('storage/' . $about->gambar_3) }});"></div>
 		          </div>
-		          <blockquote class="blockquote mt-5">
-		          	<p class="mb-2">"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.."</p>
-		          	<span>&mdash; Lucy Lee</span>
-		          </blockquote>
+		          
 	          </div>
 	        </div>
+			@endif
+			@endforeach
         </div>
     	</div>
     </section>

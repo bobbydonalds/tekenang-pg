@@ -17,10 +17,16 @@ class AboutsTable
             ->columns([
                 TextColumn::make('judul_tentang')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->limit(50),
                 TextColumn::make('deskripsi_tentang')
                     ->searchable()
-                    ->sortable(),  
+                    ->sortable()
+                    ->limit(50),  
+                TextColumn::make('link_video')
+                    ->searchable()
+                    ->sortable()
+                    ->limit(10),  
                 ImageColumn::make('gambar_1')
                     ->visibility('public'),
                 ImageColumn::make('gambar_2')
